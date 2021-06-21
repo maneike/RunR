@@ -13,6 +13,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A73A4EC328170CFE02720409 /* libPods-RunR-RunRTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CBECD97CDF81B8D3DD1B58A /* libPods-RunR-RunRTests.a */; };
+		CE686FBE268124290058DABB /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE686FBD268124290058DABB /* File.swift */; };
+		CE686FC02681249A0058DABB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE686FBF2681249A0058DABB /* MapKit.framework */; };
 		EE1EF710C29AB3CAD3E2C24E /* libPods-RunR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F44D63A9DDFD6C9E1B832E /* libPods-RunR.a */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,9 @@
 		76F44D63A9DDFD6C9E1B832E /* libPods-RunR.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunR.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RunR/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9CBECD97CDF81B8D3DD1B58A /* libPods-RunR-RunRTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunR-RunRTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE686FBC268124280058DABB /* RunR-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RunR-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE686FBD268124290058DABB /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		CE686FBF2681249A0058DABB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E64F2534D457B434753C2614 /* Pods-RunR-RunRTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunR-RunRTests.debug.xcconfig"; path = "Target Support Files/Pods-RunR-RunRTests/Pods-RunR-RunRTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -59,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE686FC02681249A0058DABB /* MapKit.framework in Frameworks */,
 				EE1EF710C29AB3CAD3E2C24E /* libPods-RunR.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +105,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE686FBF2681249A0058DABB /* MapKit.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				76F44D63A9DDFD6C9E1B832E /* libPods-RunR.a */,
 				9CBECD97CDF81B8D3DD1B58A /* libPods-RunR-RunRTests.a */,
@@ -114,7 +121,6 @@
 				E64F2534D457B434753C2614 /* Pods-RunR-RunRTests.debug.xcconfig */,
 				2C45C16F391426EDCEEAA5C4 /* Pods-RunR-RunRTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -128,12 +134,14 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				CE686FBD268124290058DABB /* File.swift */,
 				13B07FAE1A68108700A75B9A /* RunR */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* RunRTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				7665A645C38B9FDCDB271449 /* Pods */,
+				CE686FBC268124280058DABB /* RunR-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -208,7 +216,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -412,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				CE686FBE268124290058DABB /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +440,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E64F2534D457B434753C2614 /* Pods-RunR-RunRTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -458,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2C45C16F391426EDCEEAA5C4 /* Pods-RunR-RunRTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = RunRTests/Info.plist;
@@ -498,6 +509,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = RunR;
+				SWIFT_OBJC_BRIDGING_HEADER = "RunR-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -523,6 +535,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = RunR;
+				SWIFT_OBJC_BRIDGING_HEADER = "RunR-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
