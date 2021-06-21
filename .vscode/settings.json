@@ -1,0 +1,15 @@
+{
+  // "typescript.tsdk": "node_modules/typescript/lib",
+  //   "autoimport.filesToScan": "./src/**/*.{ts,tsx}",
+  "autoimport.filesToScan": "**/*",
+  "autoimport.showNotifications": true,
+  "json.schemas": [],
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace",
+    "gitlens.codeLens.scopes": ["document"]
+},
+"typescript.tsdk": "node_modules/typescript/lib"
+}
