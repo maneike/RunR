@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
-  mainStatisticsContainer: {
+  mainTabsContainer: {
     height: '100%',
     backgroundColor: '#FAFAFA',
     justifyContent: 'center',

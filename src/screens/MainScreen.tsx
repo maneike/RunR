@@ -6,11 +6,10 @@ import {
   Text,
   ActivityIndicator,
 } from 'react-native';
-import Footer from '../components/Footer';
 import MapView from '../components/MapView';
 import {styles} from './MainScreen.styles';
 
-const MainPage = ({navigation}) => {
+const MainPage = () => {
   return (
     <SafeAreaView style={{backgroundColor: '#FAFAFA'}}>
       <ScrollView
@@ -18,10 +17,9 @@ const MainPage = ({navigation}) => {
         <View style={styles.titleSection}>
           <ActivityIndicator size="small" color="#00aaff" />
           <Text style={styles.titleText}>Run R</Text>
-          <ActivityIndicator size="small" color="#ffaa00" />
+          <ActivityIndicator size="small" color="tomato" />
         </View>
         <MapView />
-        <Footer navigation={navigation} />
       </ScrollView>
     </SafeAreaView>
   );
