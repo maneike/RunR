@@ -1,37 +1,46 @@
 import React, {useState, useEffect} from 'react';
-import {ScrollView, Text, Button} from 'react-native';
+import {View, ScrollView, Text, Button, Alert} from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
-const MapView: React.FC = () => {
-  const [location, setLocation] = useState(true);
-  const [longitude, setLongitude] = useState(0);
-  const [latitude, setLatitude] = useState(0);
+import MapView, {Marker} from 'react-native-maps';
+
+const MapField: React.FC = () => {
+  const [latLng, setlatLng] = useState({longitude: 0, latitude: 0});
 
   useEffect(() => {
     Geolocation.requestAuthorization('whenInUse');
-  });
-
-  useEffect(() => {
     Geolocation.getCurrentPosition(
       position => {
-        console.log(position);
-        setLongitude(position.coords.longitude);
-        setLatitude(position.coords.latitude);
+        setlatLng({
+          longitude: position.coords.longitude,
+          latitude: position.coords.latitude,
+        });
       },
       error => {
-        // See error code charts below.
         console.log(error.code, error.message);
+        Alert.alert("Couldn't get your location :(");
       },
-      {enableHighAccuracy: true, timeout: 1000, maximumAge: 10000},
+      {enableHighAccuracy: true, timeout: 10000, maximumAge: 2000},
     );
-  }, [location]);
+  }, []);
 
   return (
-    <ScrollView>
-      <Text style={{fontWeight: 'bold'}}>MapView</Text>
-      <Text>{`Longitude: ${longitude}`}</Text>
-      <Text>{`Latitude: ${latitude}`}</Text>
-      <Button title="Get location" onPress={() => setLocation(!location)} />
-    </ScrollView>
+    <View>
+      <MapView
+        style={{height: 600, width: '100%'}}
+        region={{
+          latitude: latLng.latitude,
+          longitude: latLng.longitude,
+          latitudeDelta: 0.002,
+          longitudeDelta: 0.002,
+        }}>
+        <Marker coordinate={latLng} />
+      </MapView>
+      <ScrollView>
+        <Text>{`Longitude: ${latLng.longitude}`}</Text>
+        <Text>{`Latitude: ${latLng.latitude}`}</Text>
+        {/* <Button title="Get location" onPress={handleGetLocationButton} /> */}
+      </ScrollView>
+    </View>
   );
 };
-export default MapView;
+export default MapField;
