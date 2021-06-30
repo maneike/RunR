@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
   titleText: {
     fontWeight: 'bold',
     fontSize: 20,

@@ -1,10 +1,9 @@
 import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
   titleSection: {
-    flex: 1,
     flexDirection: 'row',
     width: '100%',
-    height: 60,
+    height: 'auto',
     backgroundColor: '#FAFAFA',
     padding: 20,
     justifyContent: 'space-between',

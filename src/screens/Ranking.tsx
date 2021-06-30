@@ -8,7 +8,6 @@ const Ranking: React.FC = () => {
       <ScrollView contentContainerStyle={styles.mainTabsContainer}>
         <Text style={styles.titleText}>Ranking will be here!</Text>
       </ScrollView>
-    
     </SafeAreaView>
   );
 };
