@@ -29,6 +29,9 @@ build/
 local.properties
 *.iml
 
+# google
+google-services.json
+GoogleService-Info.plist
 # node.js
 #
 node_modules/
