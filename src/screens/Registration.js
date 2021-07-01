@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
-import { Text, TextInput, TouchableOpacity, View} from 'react-native';
+import auth from '@react-native-firebase/auth';
+import {Alert, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import styles from './Registration.styles';
 
 export default function Registration({navigation}) {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
+  const [emailString, setEmailString] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
@@ -13,7 +15,27 @@ export default function Registration({navigation}) {
     navigation.navigate('Login');
   };
 
-  const onRegisterPress = () => {};
+  const onRegisterPress = () => {
+    if (password !== confirmPassword) {
+      Alert.alert("Passwords don't match.");
+      return;
+    }
+    auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        setEmailString(email);
+        Alert.alert('User account created & signed in!');
+      })
+      .catch(error => {
+        if (error.code === 'auth/email-already-in-use') {
+          Alert.alert('That email address is already in use!');
+        }
+        if (error.code === 'auth/invalid-email') {
+          Alert.alert('That email address is invalid!');
+        }
+        console.error(error);
+      });
+  };
 
   return (
     <View style={styles.container}>
@@ -37,6 +59,7 @@ export default function Registration({navigation}) {
           value={email}
           underlineColorAndroid="transparent"
           autoCapitalize="none"
+          keyboardType="email-address"
         />
         <TextInput
           style={styles.input}
@@ -70,6 +93,9 @@ export default function Registration({navigation}) {
               Log in
             </Text>
           </Text>
+        </View>
+        <View style={styles.footerView}>
+          <Text style={styles.footerLink}>{emailString}</Text>
         </View>
       </KeyboardAwareScrollView>
     </View>
