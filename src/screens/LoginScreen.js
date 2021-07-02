@@ -15,7 +15,7 @@ export default function LoginScreen({navigation}) {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [emailString, setEmailString] = useState('');
+  const [emailLoggedIn, setEmailLoggedIn] = useState('');
   const [user, setUser] = useState();
 
   // Handle user state changes
@@ -29,7 +29,7 @@ export default function LoginScreen({navigation}) {
   };
 
   const onGuestLinkPress = () => {
-    navigation.navigate('Home');
+    navigation.replace('Home');
   };
 
   if (initializing) return null;
@@ -37,9 +37,9 @@ export default function LoginScreen({navigation}) {
     auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
-        setEmailString(email);
+        setEmailLoggedIn(email);
         console.log('Succesfully logged in!');
-        navigation.navigate('Home');
+        navigation.replace('Home', {email});
       })
       .catch(error => {
         if (error.code === 'auth/wrong-password') {
@@ -98,7 +98,7 @@ export default function LoginScreen({navigation}) {
           <Text onPress={onGuestLinkPress} style={styles.footerLink}>
             Use the app as a guest
           </Text>
-          <Text>{emailString ?? 'No user yet'}</Text>
+          <Text>{emailLoggedIn ?? 'No user yet'}</Text>
         </View>
       </KeyboardAwareScrollView>
     </View>

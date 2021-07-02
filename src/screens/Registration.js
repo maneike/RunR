@@ -25,6 +25,7 @@ export default function Registration({navigation}) {
       .then(() => {
         setEmailString(email);
         Alert.alert('User account created & signed in!');
+        navigation.replace('Login');
       })
       .catch(error => {
         if (error.code === 'auth/email-already-in-use') {
