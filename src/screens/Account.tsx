@@ -2,15 +2,23 @@ import React from 'react';
 import {ScrollView, Text, SafeAreaView} from 'react-native';
 import {styles} from './Tabs.styles';
 
-const Account = email => {
-  console.log(email);
+const Account = options => {
+  console.log(options);
   return (
     <SafeAreaView style={{backgroundColor: '#FAFAFA'}}>
       <ScrollView contentContainerStyle={styles.mainTabsContainer}>
         <Text style={styles.titleText}>
-          {email.email.route.params.email
-            ? `Current user: ${email.email.route.params.email}`
-            : 'Account info will be here!'}
+          {options.options.route.params?.email ? (
+            <Text>
+              Hello{' '}
+              <Text style={{color: 'tomato'}}>
+                {options.options.route.params.email}
+              </Text>
+              !
+            </Text>
+          ) : (
+            'Hello Guest!'
+          )}
         </Text>
       </ScrollView>
     </SafeAreaView>

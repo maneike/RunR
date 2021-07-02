@@ -1,9 +1,4 @@
-import React, {
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {
   Alert,
   Button,
@@ -93,11 +88,10 @@ function Home(email) {
             />
           ),
         }}>
-        {() => <Account email={email} />}
+        {() => <Account options={email} />}
       </Tab.Screen>
       <Tab.Screen
         name="Settings"
-        component={Settings}
         options={{
           tabBarLabel: 'Settings',
           tabBarIcon: () => (
@@ -106,8 +100,9 @@ function Home(email) {
               style={{width: 24, height: 24}}
             />
           ),
-        }}
-      />
+        }}>
+        {() => <Settings options={email} />}
+      </Tab.Screen>
     </Tab.Navigator>
   );
 }

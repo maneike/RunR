@@ -15,7 +15,6 @@ export default function LoginScreen({navigation}) {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [emailLoggedIn, setEmailLoggedIn] = useState('');
   const [user, setUser] = useState();
 
   // Handle user state changes
@@ -37,7 +36,6 @@ export default function LoginScreen({navigation}) {
     auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
-        setEmailLoggedIn(email);
         console.log('Succesfully logged in!');
         navigation.replace('Home', {email});
       })
@@ -98,7 +96,6 @@ export default function LoginScreen({navigation}) {
           <Text onPress={onGuestLinkPress} style={styles.footerLink}>
             Use the app as a guest
           </Text>
-          <Text>{emailLoggedIn ?? 'No user yet'}</Text>
         </View>
       </KeyboardAwareScrollView>
     </View>
