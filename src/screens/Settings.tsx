@@ -5,7 +5,6 @@ import auth from '@react-native-firebase/auth';
 import {Options} from '../types/options';
 
 const Settings = (options: Options) => {
-  console.log(options);
   const handleSignOutPress = () => {
     auth()
       .signOut()
@@ -28,9 +27,13 @@ const Settings = (options: Options) => {
     <SafeAreaView style={{backgroundColor: '#FAFAFA'}}>
       <ScrollView contentContainerStyle={styles.mainTabsContainer}>
         {options.options.route.params?.email ? (
-          <Button title="Sign out" onPress={handleSignOutPress} />
+          <Button
+            title="Sign out"
+            onPress={handleSignOutPress}
+            color="tomato"
+          />
         ) : (
-          <Button title="Log in" onPress={handleLogInButton} />
+          <Button title="Log in" onPress={handleLogInButton} color="tomato" />
         )}
       </ScrollView>
     </SafeAreaView>
