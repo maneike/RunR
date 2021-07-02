@@ -1,8 +1,9 @@
 import React from 'react';
 import {ScrollView, Text, SafeAreaView} from 'react-native';
 import {styles} from './Tabs.styles';
+import {Options} from '../types/options';
 
-const Account = options => {
+const Account = (options: Options) => {
   console.log(options);
   return (
     <SafeAreaView style={{backgroundColor: '#FAFAFA'}}>

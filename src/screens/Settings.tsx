@@ -2,8 +2,9 @@ import React from 'react';
 import {ScrollView, SafeAreaView, Button, Alert} from 'react-native';
 import {styles} from './Tabs.styles';
 import auth from '@react-native-firebase/auth';
+import {Options} from '../types/options';
 
-const Settings = options => {
+const Settings = (options: Options) => {
   console.log(options);
   const handleSignOutPress = () => {
     auth()
