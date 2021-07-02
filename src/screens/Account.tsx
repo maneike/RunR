@@ -4,7 +4,6 @@ import {styles} from './Tabs.styles';
 import {Options} from '../types/options';
 
 const Account = (options: Options) => {
-  console.log(options);
   return (
     <SafeAreaView style={{backgroundColor: '#FAFAFA'}}>
       <ScrollView contentContainerStyle={styles.mainTabsContainer}>
@@ -18,7 +17,9 @@ const Account = (options: Options) => {
               !
             </Text>
           ) : (
-            'Hello Guest!'
+            <Text>
+              Hello <Text style={{color: 'tomato'}}>Guest</Text>!
+            </Text>
           )}
         </Text>
       </ScrollView>
